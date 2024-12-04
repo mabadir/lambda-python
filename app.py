@@ -14,6 +14,11 @@ def index():
     return jsonify(status=200, message="Hello Flask!")
 
 
+@app.route("/joy")
+def version():
+    return jsonify(status=200, message="Deployed by Flightcontrol")
+
+
 def handler(event, context):
     body = event.get("body", "") or ""
     if event.get("isBase64Encoded", False):
